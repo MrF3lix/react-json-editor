@@ -13,6 +13,7 @@ module.exports = {
   devServer: {
     contentBase: APP_DIR
   },
+  devtool: "#inline-source-map",
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: 'babel-loader'},
