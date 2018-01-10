@@ -1,15 +1,21 @@
 const textEditor = (state = {}, action) =>{
     switch(action.type){
         case 'UPDATE_JSON_STRING':
-            return Object.assign({}, state, {
-                jsonText: action.changedText
-            })
+            return [
+                ...state,
+                {
+                    jsonText: action.changedText
+                }
+            ]
         case 'UPDATE_JSON_OBJECT':
-            return Object.assign({}, state, {
-                jsonObject: action.newObject
-            })
+            return [
+                ...state,
+                {
+                    jsonObject: action.newObject
+                }
+            ]
         default:
-            console.log(state);
+            console.log(state)
             return state
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { udpatedJsonString } from '../actions'
-import { udpatedJsonObject } from '../actions'
+import { udpateJsonString } from '../actions'
+import { udpateJsonObject } from '../actions'
 import TextEditor from '../components/TextEditor'
 
 const mapStateToProps = state => {
