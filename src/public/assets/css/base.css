@@ -1,0 +1,31 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#object-editor, #text-editor{
+    min-height: 100vh;
+    width: 50%;
+    float: left;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+input, textarea, select{
+    width: 100%;
+    display: block;
+    line-height: 40px;
+    font-size: 1.3em;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin: 25px 0px;
+    box-shadow: none;
+    border: 1px solid #eeeeee;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
