@@ -6,7 +6,7 @@ import TextEditor from '../components/TextEditor'
 const mapStateToProps = state => {
     return {
         jsonStr: state.textEditor.jsonText,
-        isJsonStringValid: state.textEditor.isJsonStringValid
+        isJsonTextValid: state.textEditor.isJsonTextValid
     }
 }
 

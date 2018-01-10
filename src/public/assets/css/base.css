@@ -29,3 +29,8 @@ input, textarea, select{
     padding: 10px 20px;
     box-sizing: border-box;
 }
+
+textarea.invalid{
+    border: 1px solid #ff0000;
+    box-shadow: 0 0 3px red;
+}
