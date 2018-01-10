@@ -34,3 +34,7 @@ textarea.invalid{
     border: 1px solid #ff0000;
     box-shadow: 0 0 3px red;
 }
+
+#text-editor textarea{
+    height: calc(100vh - 200px);
+}

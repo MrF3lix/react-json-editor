@@ -1,25 +1,17 @@
 const textEditor = (state = {}, action) =>{
     switch(action.type){
         case 'UPDATE_JSON_STRING':
-            let isValidJson = true
-            try{
-                JSON.parse(action.changedText)
-            }
-            catch(e)
-            {
-                isValidJson = false
-            }
-
             return Object.assign({}, state, {
                 jsonText: action.changedText,
-                isJsonTextValid: isValidJson
+                isJsonTextValid: action.isValidJson
             })
         case 'UPDATE_JSON_OBJECT':
+            console.log(state)
+
             return Object.assign({}, state, {
-                jsonObject: action.changedText
+                jsonObject: action.newObject
             })
         default:
-            console.log(state)
             return state
     }
 }

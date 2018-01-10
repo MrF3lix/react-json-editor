@@ -1,7 +1,8 @@
-export const updateJsonString = changedText => {
+export const updateJsonString = ({changedText, isValidJson}) => {
     return {
         type: 'UPDATE_JSON_STRING',
-        changedText
+        changedText,
+        isValidJson
     }
 }
 

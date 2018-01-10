@@ -13,8 +13,23 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         onTextChange: (event) => {
-            let newVal = event.target.value
-            dispatch(updateJsonString(newVal))
+            let changedText = event.target.value
+            let isValidJson = true
+
+            try{
+                JSON.parse(changedText)
+            }
+            catch(e)
+            {
+                isValidJson = false
+            }
+
+            if(isValidJson)
+            {
+                dispatch(updateJsonObject(JSON.parse(changedText)))
+            }
+
+            dispatch(updateJsonString({changedText, isValidJson}))
         }
     }
 }

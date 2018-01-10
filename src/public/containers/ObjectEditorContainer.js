@@ -4,7 +4,7 @@ import ObjectEditor from '../components/ObjectEditor'
 
 const mapStateToProps = state => {
     return {
-        jsonObj: state.textEditor.jsonText
+        jsonObj: state.textEditor.jsonObject
     }
 }
 
