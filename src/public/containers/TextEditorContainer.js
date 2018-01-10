@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { udpateJsonString } from '../actions'
-import { udpateJsonObject } from '../actions'
+import { updateJsonString, updateJsonObject } from '../actions/index'
 import TextEditor from '../components/TextEditor'
 
 const mapStateToProps = state => {
@@ -13,7 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         onTextChange: () => {
-            dispatch(udpateJsonString("This is the new string"))
+            dispatch(updateJsonString("a"))
         }
     }
 }
