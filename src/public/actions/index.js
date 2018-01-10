@@ -12,3 +12,10 @@ export const updateJsonObject = newObject => {
         newObject
     }
 }
+
+export const addNewObjectToJson = newObject => {
+    return {
+        type: 'ADD_NEW_OBJECT',
+        newObject
+    }
+}

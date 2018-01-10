@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateJsonString, updateJsonObject } from '../actions/index'
+import { updateJsonString, updateJsonObject } from '../actions'
 import TextEditor from '../components/TextEditor'
 
 const mapStateToProps = state => {

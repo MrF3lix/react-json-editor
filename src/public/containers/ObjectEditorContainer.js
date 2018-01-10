@@ -1,13 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addNewObjectToJson } from '../actions'
 import ObjectEditor from '../components/ObjectEditor'
 
 const mapStateToProps = state => {
     return {
-        jsonObj: state.textEditor.jsonObject
+        jsonObj: state.objectEditor.jsonObjects
     }
 }
 
-const ObjectEditorContainer = connect(mapStateToProps)(ObjectEditor)
+const mapDispatchToProps = dispatch => {
+    return{
+        addNewObject: () =>{
+            dispatch(addNewObjectToJson({objectName: 'objectContent'}))
+        }
+    }
+}
+
+const ObjectEditorContainer = connect(mapStateToProps, mapDispatchToProps)(ObjectEditor)
 
 export default ObjectEditorContainer

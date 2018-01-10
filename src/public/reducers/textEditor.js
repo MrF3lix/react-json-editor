@@ -6,8 +6,6 @@ const textEditor = (state = {}, action) =>{
                 isJsonTextValid: action.isValidJson
             })
         case 'UPDATE_JSON_OBJECT':
-            console.log(state)
-
             return Object.assign({}, state, {
                 jsonObject: action.newObject
             })

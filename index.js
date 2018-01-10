@@ -7,9 +7,11 @@ import App from './src/public/components/App'
 
 const initialState = {
     textEditor: {
-       jsonText: "{test}",
-       jsonObject: {text: "test"},
+       jsonText: "{}",
        isJsonTextValid: true
+    },
+    objectEditor: {
+        jsonObjects: []
     }
 }
 
