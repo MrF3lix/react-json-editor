@@ -5,15 +5,16 @@ import { createStore } from 'redux'
 import jsonEditorApp from './src/public/reducers'
 import App from './src/public/components/App'
 
-
 const initialState = {
     textEditor: {
        jsonText: "{test}",
-       jsonObject: {text: "test"}
+       jsonObject: {text: "test"},
+       isJsonTextValid: true
     }
 }
 
-let store = createStore(jsonEditorApp, initialState)
+let store = createStore(jsonEditorApp, initialState, window.devToolsExtension ?
+    window.devToolsExtension() : f => f)
 
 render(
     <Provider store={store}>

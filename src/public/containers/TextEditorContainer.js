@@ -5,14 +5,16 @@ import TextEditor from '../components/TextEditor'
 
 const mapStateToProps = state => {
     return {
-        jsonStr: state.jsonText
+        jsonStr: state.textEditor.jsonText,
+        isJsonStringValid: state.textEditor.isJsonStringValid
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return{
-        onTextChange: () => {
-            dispatch(updateJsonString("a"))
+        onTextChange: (event) => {
+            let newVal = event.target.value
+            dispatch(updateJsonString(newVal))
         }
     }
 }
