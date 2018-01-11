@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
-import textEditor from './textEditor'
-import objectEditor from './objectEditor'
+import jsonEditor from './jsonEditor'
 
 const jsonEditorApp = combineReducers({
-    textEditor,
-    objectEditor
+    jsonEditor
 })
 
 export default jsonEditorApp

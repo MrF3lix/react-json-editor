@@ -6,11 +6,9 @@ import jsonEditorApp from './src/public/reducers'
 import App from './src/public/components/App'
 
 const initialState = {
-    textEditor: {
-       jsonText: "{}",
-       isJsonTextValid: true
-    },
-    objectEditor: {
+    jsonEditor: {
+        jsonText: "{}",
+        isJsonTextValid: true,
         jsonObjects: []
     }
 }

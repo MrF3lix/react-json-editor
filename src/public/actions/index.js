@@ -19,3 +19,9 @@ export const addNewObjectToJson = newObject => {
         newObject
     }
 }
+
+export const updateJsonStringFromObject = () =>{
+    return {
+        type: 'UPDATE_JSON_STRING_FROM_OBJECT'
+    }
+}
