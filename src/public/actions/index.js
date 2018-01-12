@@ -25,3 +25,18 @@ export const updateJsonStringFromObject = () =>{
         type: 'UPDATE_JSON_STRING_FROM_OBJECT'
     }
 }
+
+export const changeTextElementToEditMode = id => {
+    return {
+        type: 'CHANGE_TEXT_TO_EDIT_MODE',
+        id
+    }
+}
+
+export const updateJsonObjectFromIputField = (id, newValue) => {
+    return {
+        type: 'UPDATE_JSON_OBJECT_FROM_INPUT_FIELD',
+        id,
+        newValue
+    }
+}

@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addNewObjectToJson } from '../actions'
 import { updateJsonStringFromObject } from '../actions'
+import { changeTextElementToEditMode } from '../actions'
+import { updateJsonObjectFromIputField } from '../actions'
 import ObjectEditor from '../components/ObjectEditor'
 
 const mapStateToProps = state => {
@@ -11,13 +13,17 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch, state) => {
-    //How to get the new json object
-    let changedText = "JSON.stringify(state.objectEditor.jsonObjects)"
-    let isValidJson = true
-
     return{
-        addNewObject: () =>{
+        addNewObject: () => {
             dispatch(addNewObjectToJson({objectName: 'objectContent'}))
+            dispatch(updateJsonStringFromObject())
+        },
+        changeToEditMode: (id) => {
+            dispatch(changeTextElementToEditMode({id}))
+        },
+        saveTextFromInput: (event, id) => {
+            let newValue = event.target.value
+            dispatch(updateJsonObjectFromIputField(id, newValue))
             dispatch(updateJsonStringFromObject())
         }
     }

@@ -18,6 +18,13 @@ const jsonEditor = (state = {}, action) => {
                 jsonText: JSON.stringify(state.jsonObjects, null, 2),
                 isJsonTextValid: true
             })
+        case 'UPDATE_JSON_OBJECT_FROM_INPUT_FIELD':
+            return Object.assign({}, state, { 
+                jsonObjects: state.jsonObjects.map((element, index) => 
+                    (index == action.id)
+                        ? {...element, objectName: action.newValue}
+                        : element
+            )})
         default:
             return state
     }
