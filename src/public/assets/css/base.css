@@ -38,3 +38,10 @@ textarea.invalid{
 #text-editor textarea{
     height: calc(100vh - 200px);
 }
+
+.json-element{
+    padding: 0 5px 0 20px;
+    border: 1px solid #eeeeee;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
