@@ -8,22 +8,30 @@ import ObjectEditor from '../components/ObjectEditor'
 
 const mapStateToProps = state => {
     return {
-        jsonObj: state.jsonEditor.jsonObjects
+        jsonObj: state.jsonEditor.jsonObject
     }
 }
 
-const mapDispatchToProps = (dispatch, state) => {
+const mapDispatchToProps = (dispatch) => {
+
     return{
-        addNewObject: () => {
-            dispatch(addNewObjectToJson({objectName: 'objectContent'}))
+        addNewObject: () => {            
+            let random = Math.floor(Math.random() * (1 - 100 + 1)) + 1;
+            let propName = "propName" + random
+            let newObject = {}
+            let objectProperty = propName
+            
+            newObject[objectProperty] = "newContent"
+
+            dispatch(addNewObjectToJson(newObject))
             dispatch(updateJsonStringFromObject())
         },
         changeToEditMode: (id) => {
             dispatch(changeTextElementToEditMode({id}))
         },
-        saveTextFromInput: (event, id) => {
-            let newValue = event.target.value
-            dispatch(updateJsonObjectFromIputField(id, newValue))
+        saveTextFromInput: (event, property) => {
+            let value = event.target.value
+            dispatch(updateJsonObjectFromIputField(property, value))
             dispatch(updateJsonStringFromObject())
         }
     }

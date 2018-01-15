@@ -1,12 +1,14 @@
 const jsonEditor = (state = {}, action) => {
     switch(action.type){
         case 'ADD_NEW_OBJECT':
-            return Object.assign({}, state, {
-                jsonObjects: state.jsonObjects.concat(action.newObject)
+            let newJsonObject = Object.assign({}, state.jsonObject, action.newObject)
+
+            return Object.assign({}, state,{ 
+                jsonObject: newJsonObject
             })
         case 'UPDATE_JSON_OBJECT':
             return Object.assign({}, state, {
-                jsonObjects: action.newObject
+                jsonObject: action.newObject
             })
         case 'UPDATE_JSON_STRING':
             return Object.assign({}, state, {
@@ -15,16 +17,16 @@ const jsonEditor = (state = {}, action) => {
             })
         case 'UPDATE_JSON_STRING_FROM_OBJECT':
             return Object.assign({}, state, {
-                jsonText: JSON.stringify(state.jsonObjects, null, 2),
+                jsonText: JSON.stringify(state.jsonObject, null, 2),
                 isJsonTextValid: true
             })
         case 'UPDATE_JSON_OBJECT_FROM_INPUT_FIELD':
-            return Object.assign({}, state, { 
-                jsonObjects: state.jsonObjects.map((element, index) => 
-                    (index == action.id)
-                        ? {...element, objectName: action.newValue}
-                        : element
-            )})
+            let updatedObject = {}
+            updatedObject[action.property] = action.value
+            let updatedJsonObject = Object.assign({}, state.jsonObject, updatedObject)
+            return Object.assign({}, state,{
+                jsonObject: updatedJsonObject
+            })
         default:
             return state
     }

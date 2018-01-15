@@ -33,10 +33,10 @@ export const changeTextElementToEditMode = id => {
     }
 }
 
-export const updateJsonObjectFromIputField = (id, newValue) => {
+export const updateJsonObjectFromIputField = (property, value) => {
     return {
         type: 'UPDATE_JSON_OBJECT_FROM_INPUT_FIELD',
-        id,
-        newValue
+        property,
+        value
     }
 }

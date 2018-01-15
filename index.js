@@ -9,7 +9,7 @@ const initialState = {
     jsonEditor: {
         jsonText: "{}",
         isJsonTextValid: true,
-        jsonObjects: []
+        jsonObject: {}
     }
 }
 
